@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WordpressPostsComponent } from 'src/app/wordpress-posts/wordpress-posts.component'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'A Blog and Map App';
+  wordpressPosts = {WordpressPostsComponent};
 }
