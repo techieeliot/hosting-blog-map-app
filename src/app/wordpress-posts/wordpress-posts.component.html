@@ -1,29 +1,28 @@
-  <h1>
+  <h3>
     <a (click)="loadPosts()">Load the 20 Most Recent Posts</a>.
-  </h1>
-      <ng-template [ngIf]="posts">
-        <h2>
-            The {{ posts.length }} Most Recent Posts!
-        </h2>
-
-        <table class="wp-table">
-          <thead>
-            <tr>
-              <th class="wp-table-label">id</th>
-              <th class="wp-table-label">slug</th>
-              <th class="wp-table-label">status</th>
-              <th class="wp-table-label">title</th>
-              <th class="wp-table-label">creation date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let post of posts">
-              <td class="wp-table-content">{{ post.id }}</td>
-              <td class="wp-table-content">{{ post.slug }}</td>
-              <td class="wp-table-content">{{ post.status }}</td>
-              <td class="wp-table-content">{{ post.title.rendered }}</td>
-              <td class="wp-table-content">{{ post.date }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </ng-template>
+  </h3>
+  <div *ngIf="posts.length">
+    <h2>
+        The {{ posts.length }} Most Recent Posts!
+    </h2>
+    <table class="wp-table">
+      <thead>
+        <tr>
+          <th class="wp-table-label">id</th>
+          <th class="wp-table-label">slug</th>
+          <th class="wp-table-label">status</th>
+          <th class="wp-table-label">title</th>
+          <th class="wp-table-label">creation date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts">
+          <td class="wp-table-content">{{ post.id }}</td>
+          <td class="wp-table-content">{{ post.slug }}</td>
+          <td class="wp-table-content">{{ post.status }}</td>
+          <td class="wp-table-content">{{ post.title.rendered }}</td>
+          <td class="wp-table-content">{{ post.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

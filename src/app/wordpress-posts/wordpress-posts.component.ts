@@ -22,26 +22,21 @@ export class WordpressPostsComponent implements OnInit {
  
 	}
   
-  ngOnInit() {
-  }
 	public async loadPosts() : Promise<void> {
- 
-		try {
-			this.posts = await this.apiClient.get<Posts[]>({
-				url: "https://wordpress.org/news/wp-json/wp/v2/posts?filter[orderby]=date+desc",
+    
+    try {
+      this.posts = await this.apiClient.get<Posts[]>({
+        url: "https://wordpress.org/news/wp-json/wp/v2/posts?filter[orderby]=date+desc",
 				params: {
           limit: 20
 				}
       });
-      
- 
 		} catch ( error ) {
- 
-			console.error( error );
- 
+      console.error( error ); 
 		}
- 
+    
   }
-  
 
+  ngOnInit() {
+  }
 }

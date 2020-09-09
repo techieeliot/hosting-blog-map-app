@@ -47,7 +47,7 @@ export class ApiClient {
  
 		try {
  
-			var axiosResponse = await this.axiosClient.request<T>({
+			const axiosResponse = await this.axiosClient.request<T>({
 				method: "get",
 				url: options.url,
 				params: options.params,
@@ -57,28 +57,18 @@ export class ApiClient {
 				}
 			});
  
-			return( axiosResponse.data );
+			return( axiosResponse.data);
  
 		} catch ( error ) {
- 
 			return( Promise.reject( this.normalizeError( error ) ) );
- 
 		}
  
 	}
  
-	// ---
-	// PRIVATE METHODS.
-	// ---
- 
-	// Errors can occur for a variety of reasons. I normalize the error response so that
-	// the calling context can assume a standard error structure.
 	private normalizeError( error: any ) : ErrorResponse {
  
 		this.errorHandler.handleError( error );
- 
-		// NOTE: Since I'm not really dealing with a production API, this doesn't really
-		// normalize anything (ie, this is not the focus of this demo).
+
 		return({
 			id: "-1",
 			code: "UnknownError",
