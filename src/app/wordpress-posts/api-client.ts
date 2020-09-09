@@ -52,7 +52,8 @@ export class ApiClient {
 				url: options.url,
 				params: options.params,
 				headers: {
-					'Access-Control-Allow-Origin': '*'
+					'Access-Control-Allow-Origin': '*',
+					'Content-Type': 'application/json'
 				}
 			});
  

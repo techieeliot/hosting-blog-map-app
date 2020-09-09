@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Posts} from './wp-post'
+import { Posts } from './wp-post'
 import { ApiClient } from './api-client';
 
 @Component({
@@ -21,7 +21,9 @@ export class WordpressPostsComponent implements OnInit {
 		document.cookie = "XSRF-TOKEN=server-generated-token";
  
 	}
- 
+  
+  ngOnInit() {
+  }
 	public async loadPosts() : Promise<void> {
  
 		try {
@@ -41,7 +43,5 @@ export class WordpressPostsComponent implements OnInit {
  
   }
   
-  ngOnInit() {
-  }
 
 }
