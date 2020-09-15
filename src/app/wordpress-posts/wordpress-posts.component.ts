@@ -8,7 +8,6 @@ import { ApiClient } from './api-client';
   styleUrls: ['./wordpress-posts.component.css']
 })
 export class WordpressPostsComponent implements OnInit {
-
   public posts: Posts[];
  
 	private apiClient: ApiClient;
@@ -18,7 +17,7 @@ export class WordpressPostsComponent implements OnInit {
 		this.apiClient = apiClient;
 		this.posts = [];
 
-		document.cookie = "XSRF-TOKEN=server-generated-token";
+		// document.cookie = "XSRF-TOKEN=server-generated-token";
  
 	}
   
@@ -29,7 +28,7 @@ export class WordpressPostsComponent implements OnInit {
         url: "https://wordpress.org/news/wp-json/wp/v2/posts?filter[orderby]=date+desc",
 				params: {
           limit: 20
-				}
+        }
       });
 		} catch ( error ) {
       console.error( error ); 

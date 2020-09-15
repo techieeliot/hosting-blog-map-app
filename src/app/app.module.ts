@@ -3,14 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { WordpressPostsComponent } from './wordpress-posts/wordpress-posts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WordpressPostsComponent
+    WordpressPostsComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

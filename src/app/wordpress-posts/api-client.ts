@@ -34,9 +34,15 @@ export class ApiClient {
 		this.errorHandler = errorHandler;
  
 		this.axiosClient = axios.create({
-			timeout: 3000,
+			// timeout: 3000,
 			headers: {
-				"X-Initialized-At": Date.now().toString()
+				// "X-Initialized-At": Date.now().toString(),
+				// "Access-Control-Allow-Origin": "*",
+				// "Access-Control-Allow-Origin": "https://localhost:4200",
+				//  || "https://blog-map-techieeliot.netlify.app/",
+				// "Access-Control-Allow-Credentials": "true",
+				// "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+				// 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
 			}
 		});
  
@@ -51,13 +57,9 @@ export class ApiClient {
 				method: "get",
 				url: options.url,
 				params: options.params,
-				headers: {
-					'Access-Control-Allow-Origin': '*',
-					'Content-Type': 'application/json'
-				}
 			});
  
-			return( axiosResponse.data);
+			return( axiosResponse.data)
  
 		} catch ( error ) {
 			return( Promise.reject( this.normalizeError( error ) ) );
